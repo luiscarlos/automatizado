@@ -34,7 +34,7 @@ public class GoogleTeste extends BaseTeste {
     }
 
     @Test
-    public void devePesquisarNoGoogle1() {
+    public void TC002_deveSerPossivelPequisarNoGoogleOTextoAulaDeTeclado() {
         googlePage.inputPesquisa.sendKeys("Aulas de violão" + Keys.ENTER);
 
         String resultado = googlePage.divResultadoPesquisa.getText();

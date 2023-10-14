@@ -17,7 +17,7 @@ public abstract class BasePO {
      * 
      * @param driver Driver da página atual.
      */
-    protected BasePO(WebDriver driver) {
+    public BasePO(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
