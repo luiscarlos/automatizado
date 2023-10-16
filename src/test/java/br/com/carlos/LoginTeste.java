@@ -18,8 +18,8 @@ public class LoginTeste extends BaseTeste {
     }
 
     @Test
-    public void TC001_NsoDeveLogarNoSistemaComEmailESenhaVazios() {
-        loginPage.inputEmail.sendKeys("");
+    public void TC001_NaoDeveLogarNoSistemaComEmailESenhaVazios() {
+        loginPage.escrever(loginPage.inputEmail, "");
         loginPage.inputSenha.sendKeys("");
         loginPage.btnEntrar.click();
 
