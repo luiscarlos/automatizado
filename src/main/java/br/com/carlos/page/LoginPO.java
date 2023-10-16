@@ -29,4 +29,8 @@ public class LoginPO extends BasePO {
         // TODO Auto-generated constructor stub
     }
 
+    public String obterMensagem() {
+        return this.spanMensagem.getText();
+    }
+
 }

@@ -6,8 +6,8 @@ Passo a passo para a criação de testes autpmatizados.
         1.3.1 = Criar elememto com PageFactory - ok
 
 2.0 = Estruturar o arquivo de teste de login
-    2.1 = Criar um arquivo chamado loginTeste.java
-    2.2 = Fazer a herança do arquivo BaseTeste.java
-    2.3 = Criar um metodo inicial que saiba estancear um PO de login
+    2.1 = Criar um arquivo chamado loginTeste.java dentro da pasta teste - ok
+    2.2 = Fazer a herança do arquivo BaseTeste.java - ok
+    2.3 = Criar um metodo inicial que saiba estancear um PO de login - ok
     2.4 = Criar os testes baseados na planilha 
-        2.4.1 = 
+        2.4.1 = Não deve logar no sistema com usuario e senha em branco ou vazio
