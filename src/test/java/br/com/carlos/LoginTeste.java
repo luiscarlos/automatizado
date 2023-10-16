@@ -12,6 +12,11 @@ import br.com.carlos.page.LoginPO;
 public class LoginTeste extends BaseTeste {
     private static LoginPO loginPage;
 
+    // public void executarAcaoDeLogar(String email, String senha) {
+    // loginPage.escrever(loginPage.inputEmail, "");
+    // loginPage.escrever(loginPage.inputSenha, "");
+    // }
+
     @BeforeClass
     public static void preperarTestes() {
         loginPage = new LoginPO(driver);
@@ -19,8 +24,8 @@ public class LoginTeste extends BaseTeste {
 
     @Test
     public void TC001_NaoDeveLogarNoSistemaComEmailESenhaVazios() {
-        loginPage.escrever(loginPage.inputEmail, "");
-        loginPage.inputSenha.sendKeys("");
+        loginPage.executarAcaoDeLogar("", "");
+        // loginPage.inputSenha.sendKeys("");
         loginPage.btnEntrar.click();
 
         String mensagem = loginPage.obterMensagem();
@@ -32,8 +37,19 @@ public class LoginTeste extends BaseTeste {
     @Test
     public void TC002_NaoDeveLogarNoSistemaComEmailInformadoIncorretoESenhaVazios() {
 
-        loginPage.escrever(loginPage.inputEmail, "teste");
-        loginPage.inputSenha.sendKeys("");
+        loginPage.executarAcaoDeLogar("teste", "");
+        loginPage.btnEntrar.click();
+
+        String mensagem = loginPage.obterMensagem();
+
+        assertEquals(mensagem, "Informe usuário e senha, os campos não podem ser brancos.");
+
+    }
+
+    @Test
+    public void TC003_NaoDeveLogarNoSistemaComEmailVazioESenhaIncorreta() {
+
+        loginPage.executarAcaoDeLogar("", "teste");
         loginPage.btnEntrar.click();
 
         String mensagem = loginPage.obterMensagem();

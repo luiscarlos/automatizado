@@ -35,8 +35,14 @@ public class LoginPO extends BasePO {
     }
 
     public void escrever(WebElement input, String texto) {
+        input.clear();
         input.sendKeys(texto + Keys.TAB);
 
+    }
+
+    public void executarAcaoDeLogar(String email, String senha) {
+        escrever(inputEmail, "");
+        escrever(inputSenha, "");
     }
 
 }
