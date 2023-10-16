@@ -28,4 +28,17 @@ public class LoginTeste extends BaseTeste {
         assertEquals(mensagem, "Informe usuário e senha, os campos não podem ser brancos.");
 
     }
+
+    @Test
+    public void TC002_NaoDeveLogarNoSistemaComEmailInformadoIncorretoESenhaVazios() {
+
+        loginPage.escrever(loginPage.inputEmail, "teste");
+        loginPage.inputSenha.sendKeys("");
+        loginPage.btnEntrar.click();
+
+        String mensagem = loginPage.obterMensagem();
+
+        assertEquals(mensagem, "Informe usuário e senha, os campos não podem ser brancos.");
+
+    }
 }
