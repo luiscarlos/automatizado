@@ -5,12 +5,15 @@ import static org.junit.Assert.assertTrue;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 
 import org.openqa.selenium.Keys;
 
 import br.com.carlos.page.GooglePO;
+import org.junit.runners.MethodSorters;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class GoogleTeste extends BaseTeste {
 
     private static GooglePO googlePage;

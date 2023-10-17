@@ -27,7 +27,6 @@ public class LoginPO extends BasePO {
 
     public LoginPO(WebDriver driver) {
         super(driver);
-        // TODO Auto-generated constructor stub
     }
 
     public String obterMensagem() {
@@ -40,9 +39,21 @@ public class LoginPO extends BasePO {
 
     }
 
+    /**
+     * Metodo que tenta executar a acao de logar no sistema
+     * 
+     * @param email
+     * @param senha
+     */
     public void executarAcaoDeLogar(String email, String senha) {
-        escrever(inputEmail, "");
-        escrever(inputSenha, "");
+        escrever(inputEmail, email);
+        escrever(inputSenha, senha);
+        btnEntrar.click();
+    }
+
+    public String obterTituloDaPagina() {
+        return driver.getTitle();
+
     }
 
 }
