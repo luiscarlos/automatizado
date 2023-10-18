@@ -21,4 +21,9 @@ public abstract class BasePO {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
+    public String obterTituloDaPagina() {
+        return driver.getTitle();
+
+    }
 }
